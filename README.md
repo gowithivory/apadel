@@ -26,8 +26,8 @@ Egypt's competitive padel tennis tournament platform. Players register, organize
 
 ```bash
 # 1. Clone the repo
-git clone <repo-url>
-cd APADEL
+git clone https://github.com/gowithivory/apadel.git
+cd apadel
 
 # 2. Install dependencies
 npm install
