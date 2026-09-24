@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Panel — APadel</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav" id="main-nav">
+  <a href="index.html" class="nav-logo"><span class="accent">A</span>PADEL</a>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">Home</a>
+    <a href="tournaments.html">Tournaments</a>
+    <a href="rankings.html">Rankings</a>
+    <a href="organiser.html">Organiser</a>
+    <a href="admin.html" class="active">Admin</a>
+    <div id="nav-dynamic" style="display:contents"></div>
+  </div>
+  <div class="nav-right" id="nav-right"></div>
+  <button class="nav-hamburger" id="nav-ham" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-hero">
+    <div class="container">
+      <h1 class="page-hero-title"><span class="accent">Admin</span> Panel</h1>
+      <p class="page-hero-sub">Full system administration, user roles, and platform settings.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Tabs -->
+      <div class="admin-tabs">
+        <button class="admin-tab active" data-panel="panel-users">Users</button>
+        <button class="admin-tab" data-panel="panel-sponsors">Sponsors</button>
+        <button class="admin-tab" data-panel="panel-points">Point Config</button>
+        <button class="admin-tab" data-panel="panel-contact">Contact Info</button>
+        <button class="admin-tab" data-panel="panel-submissions">Submissions</button>
+        <button class="admin-tab" data-panel="panel-announcements">Announcements</button>
+      </div>
+
+      <!-- USERS -->
+      <div class="admin-panel active" id="panel-users">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;gap:12px;flex-wrap:wrap">
+          <h2 class="section-title" style="font-size:22px">User Management</h2>
+          <input type="text" id="user-search" class="input" placeholder="Search by name or email…" style="max-width:260px">
+        </div>
+        <div class="card" style="overflow-x:auto">
+          <table class="org-table">
+            <thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Gender</th><th>Status</th></tr></thead>
+            <tbody id="users-tbody"><tr><td colspan="5"><div class="spinner"></div></td></tr></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- SPONSORS -->
+      <div class="admin-panel" id="panel-sponsors">
+        <h2 class="section-title" style="font-size:22px;margin-bottom:20px">Sponsors</h2>
+        <div class="card mb-4">
+          <div class="card-hdr">Add Sponsor</div>
+          <div class="card-body">
+            <form id="add-sponsor-form">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+                <div class="form-group">
+                  <label>Name</label>
+                  <input type="text" name="name" class="input" required>
+                </div>
+                <div class="form-group">
+                  <label>Type</label>
+                  <input type="text" name="sponsor_type" class="input" placeholder="Partner, Title Sponsor…">
+                </div>
+                <div class="form-group">
+                  <label>Logo URL</label>
+                  <input type="url" name="logo_url" class="input" placeholder="https://…">
+                </div>
+                <div class="form-group">
+                  <label>Website URL</label>
+                  <input type="url" name="website_url" class="input" placeholder="https://…">
+                </div>
+                <div class="form-group">
+                  <label>Sort Order</label>
+                  <input type="number" name="sort_order" class="input" value="0">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-green">Add Sponsor</button>
+            </form>
+          </div>
+        </div>
+        <div id="sponsors-list"><div class="spinner"></div></div>
+      </div>
+
+      <!-- POINT CONFIG -->
+      <div class="admin-panel" id="panel-points">
+        <h2 class="section-title" style="font-size:22px;margin-bottom:20px">Point Configuration</h2>
+        <div class="card" style="max-width:480px">
+          <div class="card-hdr">Points Per Event</div>
+          <div class="card-body">
+            <form id="point-config-form">
+              <div class="form-group">
+                <label>Match Win Points (per player)</label>
+                <input type="number" id="pc-win" class="input" min="0" required>
+              </div>
+              <div class="form-group">
+                <label>Title Bonus Points (champion)</label>
+                <input type="number" id="pc-title" class="input" min="0" required>
+              </div>
+              <div class="form-group">
+                <label>Runner-Up Bonus Points</label>
+                <input type="number" id="pc-runner" class="input" min="0" required>
+              </div>
+              <button type="submit" class="btn btn-green">Save Config</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTACT INFO -->
+      <div class="admin-panel" id="panel-contact">
+        <h2 class="section-title" style="font-size:22px;margin-bottom:20px">Contact Information</h2>
+        <div class="card" style="max-width:560px">
+          <div class="card-hdr">Public Contact Details</div>
+          <div class="card-body">
+            <form id="contact-info-form">
+              <div class="form-group"><label>WhatsApp</label><input type="text" id="ci-whatsapp" class="input" placeholder="+20 100 000 0000"></div>
+              <div class="form-group"><label>Instagram</label><input type="text" id="ci-instagram" class="input" placeholder="@handle"></div>
+              <div class="form-group"><label>Facebook</label><input type="text" id="ci-facebook" class="input" placeholder="Page name or URL"></div>
+              <div class="form-group"><label>Email</label><input type="email" id="ci-email" class="input" placeholder="info@apadel.com"></div>
+              <div class="form-group"><label>Location</label><input type="text" id="ci-location" class="input" placeholder="Cairo, Egypt"></div>
+              <button type="submit" class="btn btn-green">Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUBMISSIONS -->
+      <div class="admin-panel" id="panel-submissions">
+        <h2 class="section-title" style="font-size:22px;margin-bottom:20px">Contact Submissions</h2>
+        <div id="submissions-wrap"><div class="spinner"></div></div>
+      </div>
+
+      <!-- ANNOUNCEMENTS -->
+      <div class="admin-panel" id="panel-announcements">
+        <h2 class="section-title" style="font-size:22px;margin-bottom:20px">Announcements</h2>
+        <div class="card mb-4">
+          <div class="card-hdr">New Announcement</div>
+          <div class="card-body">
+            <form id="add-announce-form">
+              <div class="form-group"><label>Title</label><input type="text" name="title" class="input" required></div>
+              <div class="form-group"><label>Body</label><textarea name="body" class="input" rows="4" required></textarea></div>
+              <div class="form-group" style="display:flex;align-items:center;gap:10px">
+                <input type="checkbox" name="is_published" id="chk-published" checked>
+                <label for="chk-published" style="text-transform:none;font-size:14px;margin-bottom:0">Publish immediately</label>
+              </div>
+              <button type="submit" class="btn btn-green">Create</button>
+            </form>
+          </div>
+        </div>
+        <div id="announcements-admin-list"><div class="spinner"></div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">A<span>P</span>ADEL</div>
+      <nav class="footer-links">
+        <a href="tournaments.html">Tournaments</a>
+        <a href="rankings.html">Rankings</a>
+        <a href="results.html">Results</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 APadel. Egypt's Competitive Padel Ecosystem.</span>
+      <span>Powered by <a href="https://ivorystudios.io" style="color:var(--green)">Ivory Studios</a></span>
+    </div>
+  </footer>
+</div>
+
+<div id="toast-container"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script type="module" src="js/app.js"></script>
+<script type="module" src="js/admin.js"></script>
+</body>
+</html>

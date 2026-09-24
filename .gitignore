@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Environment (never commit real credentials)
+.env
+.env.*
+!.env.example
+
+# Local tooling
+.claude/
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+._*

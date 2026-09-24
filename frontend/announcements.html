@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>News & Announcements — APadel</title>
+  <meta name="description" content="Stay up to date with the latest APadel news, tournament announcements, and platform updates.">
+  <meta property="og:title" content="News & Announcements — APadel">
+  <meta property="og:description" content="Latest news and announcements from Egypt's padel tournament platform.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav" id="main-nav">
+  <a href="index.html" class="nav-logo"><span class="accent">A</span>PADEL</a>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">Home</a>
+    <a href="tournaments.html">Tournaments</a>
+    <a href="rankings.html">Rankings</a>
+    <a href="results.html">Results</a>
+    <a href="announcements.html" class="active">News</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <div id="nav-dynamic" style="display:contents"></div>
+  </div>
+  <div class="nav-right" id="nav-right"></div>
+  <button class="nav-hamburger" id="nav-ham" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-hero">
+    <div class="container">
+      <h1 class="page-hero-title">News &amp; <span class="accent">Announcements</span></h1>
+      <p class="page-hero-sub">Updates from the APadel team.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container" style="max-width:800px">
+      <div id="announcements-wrap"><div class="spinner"></div></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">A<span>P</span>ADEL</div>
+      <nav class="footer-links">
+        <a href="tournaments.html">Tournaments</a>
+        <a href="rankings.html">Rankings</a>
+        <a href="results.html">Results</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 APadel. Egypt's Competitive Padel Ecosystem.</span>
+      <span>Powered by <a href="https://ivorystudios.io" style="color:var(--green)">Ivory Studios</a></span>
+    </div>
+  </footer>
+</div>
+
+<div id="toast-container"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script type="module" src="js/app.js"></script>
+<script type="module" src="js/announcements.js"></script>
+</body>
+</html>

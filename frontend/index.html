@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>APadel — Egypt's Competitive Padel Ecosystem</title>
+  <meta name="description" content="APadel is Egypt's premier padel tennis tournament platform. Join competitions, track rankings, and follow match results.">
+  <meta property="og:title" content="APadel — Egypt's Competitive Padel Ecosystem">
+  <meta property="og:description" content="Join Egypt's premier padel tennis tournament platform. Compete, rank, and win.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://apadel.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="APadel — Egypt's Competitive Padel Ecosystem">
+  <meta name="twitter:description" content="Join Egypt's premier padel tennis tournament platform.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav" id="main-nav">
+  <a href="index.html" class="nav-logo"><span class="accent">A</span>PADEL</a>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="tournaments.html">Tournaments</a>
+    <a href="rankings.html">Rankings</a>
+    <a href="results.html">Results</a>
+    <a href="announcements.html">News</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <div id="nav-dynamic" style="display:contents"></div>
+  </div>
+  <div class="nav-right" id="nav-right"></div>
+  <button class="nav-hamburger" id="nav-ham" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="page-wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <!-- Background: subtle dark court texture -->
+    <div class="hero-bg-img"></div>
+    <div class="hero-overlay"></div>
+    <!-- Blended player image — right side -->
+    <div class="hero-player">
+      <img src="https://images.pexels.com/photos/35248393/pexels-photo-35248393.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Padel player in action" loading="eager">
+    </div>
+    <div class="container">
+      <div class="hero-split">
+        <div class="hero-content">
+          <p class="hero-eyebrow">Egypt's #1 Padel Circuit</p>
+          <h1 class="hero-title">
+            <span class="white">PLAY.</span><br>
+            <span class="green">PROGRESS.</span><br>
+            <span class="white">PREVAIL.</span>
+          </h1>
+          <p class="hero-sub">Official ranked tournaments. Live standings. Permanent match records. Everything Egypt's competitive padel community needs in one place.</p>
+          <div class="hero-btns">
+            <a href="register.html" class="btn btn-green btn-xl">Join the Circuit</a>
+            <a href="tournaments.html" class="btn btn-outline btn-xl">View Tournaments</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num" id="stat-players">0</div>
+          <div class="hero-stat-label">Registered Players</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" id="stat-tournaments">0</div>
+          <div class="hero-stat-label">Tournaments Completed</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" id="stat-prize">0</div>
+          <div class="hero-stat-label">Prize Money Awarded</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" id="stat-partners">0</div>
+          <div class="hero-stat-label">Club Partners</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOURNAMENT SPOTLIGHT — full-width feature with padel court bg -->
+  <section class="spotlight" id="spotlight">
+    <div class="spotlight-bg" id="spotlight-bg"></div>
+    <div class="spotlight-overlay"></div>
+    <div class="container">
+      <div class="spotlight-inner">
+        <div class="spotlight-left">
+          <span class="spotlight-tag" id="spotlight-tag">Registration Open</span>
+          <h2 class="spotlight-title" id="spotlight-title">APadel Alexandria Open 2026</h2>
+          <div class="spotlight-details" id="spotlight-details">
+            <div class="spotlight-detail">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span id="spotlight-date">July 18–19, 2026</span>
+            </div>
+            <div class="spotlight-detail">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span id="spotlight-loc">Smouha Club, Alexandria</span>
+            </div>
+          </div>
+          <a href="tournaments.html" class="btn btn-green btn-xl" id="spotlight-cta" style="margin-top:28px">Register Now &rarr;</a>
+        </div>
+        <div class="spotlight-prizes" id="spotlight-prizes">
+          <div class="sp-prize-title">Prize Breakdown</div>
+          <div class="sp-prize-row">
+            <div class="sp-pos">
+              <span class="sp-medal gold">1</span>
+              <span class="sp-place">Champion</span>
+            </div>
+            <span class="sp-amt" id="sp-1st">EGP 10,000</span>
+          </div>
+          <div class="sp-prize-row">
+            <div class="sp-pos">
+              <span class="sp-medal silver">2</span>
+              <span class="sp-place">Runner-Up</span>
+            </div>
+            <span class="sp-amt" id="sp-2nd">EGP 5,000</span>
+          </div>
+          <div class="sp-prize-row">
+            <div class="sp-pos">
+              <span class="sp-medal bronze">3</span>
+              <span class="sp-place">3rd Place</span>
+            </div>
+            <span class="sp-amt" id="sp-3rd">EGP 2,500</span>
+          </div>
+          <div class="sp-total">
+            <span>Total Pool</span>
+            <span class="sp-total-amt" id="sp-total">EGP 20,000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY APADEL — features with padel court image -->
+  <section class="why-section">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-left">
+          <p class="section-label">The APadel Standard</p>
+          <h2 class="why-title">Built Different.<br><span class="accent">Built to Compete.</span></h2>
+          <div class="why-feature">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div>
+              <div class="why-feature-title">Live Rankings</div>
+              <div class="why-feature-body">Every win earns points. Standings update automatically — no waiting, no disputes.</div>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div>
+              <div class="why-feature-title">Real Cash Prizes</div>
+              <div class="why-feature-body">Multiple placement tiers. Win, place, or reach the semis — all positions are rewarded.</div>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <div class="why-feature-title">Strict Scheduling</div>
+              <div class="why-feature-body">Match times published in advance. 2–3 matches per day maximum. We respect your time.</div>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div>
+              <div class="why-feature-title">Premium Venues</div>
+              <div class="why-feature-body">Smouha Club, Wadi Degla, Gezira — Egypt's best padel clubs, exclusively.</div>
+            </div>
+          </div>
+        </div>
+        <div class="why-right">
+          <div class="why-img-wrap">
+            <img src="https://images.pexels.com/photos/35248286/pexels-photo-35248286.jpeg?auto=compress&cs=tinysrgb&w=900&h=1000&fit=crop" alt="Padel player in action" loading="lazy">
+            <div class="why-img-badge">
+              <span class="why-badge-num">EGP 47K+</span>
+              <span class="why-badge-label">Prizes Awarded</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFICIAL SPONSORS -->
+  <div class="sponsors-bar">
+    <div class="sponsors-bar-inner">
+      <div class="sponsors-bar-label">
+        <span>Official</span>
+        <span>Sponsors</span>
+      </div>
+      <div class="sponsors-bar-divider"></div>
+      <div class="sponsors-bar-logos">
+
+        <!-- Wilson -->
+        <a class="slogo" href="#" title="Wilson">
+          <svg viewBox="0 0 110 36" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="14" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".35"/>
+            <ellipse cx="18" cy="18" rx="6" ry="14" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".35"/>
+            <line x1="4" y1="18" x2="32" y2="18" stroke="currentColor" stroke-width="1.5" opacity=".35"/>
+            <text x="40" y="25" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="22" letter-spacing="2" fill="currentColor">WILSON</text>
+          </svg>
+        </a>
+
+        <!-- HEAD -->
+        <a class="slogo" href="#" title="HEAD">
+          <svg viewBox="0 0 80 36" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="28" font-family="'Barlow Condensed',sans-serif" font-weight="900" font-size="32" letter-spacing="-1" fill="currentColor">HEAD</text>
+          </svg>
+        </a>
+
+        <!-- Bullpadel -->
+        <a class="slogo" href="#" title="Bullpadel">
+          <svg viewBox="0 0 130 36" xmlns="http://www.w3.org/2000/svg">
+            <!-- bull horns icon -->
+            <path d="M8 22 Q4 12 10 10 Q14 8 16 14 Q18 8 22 10 Q28 12 24 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="16" cy="20" r="5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            <text x="36" y="26" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="19" letter-spacing="1.5" fill="currentColor">BULLPADEL</text>
+          </svg>
+        </a>
+
+        <!-- NOX -->
+        <a class="slogo slogo-nox" href="#" title="NOX Sport">
+          <svg viewBox="0 0 72 36" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="28" font-family="'Barlow Condensed',sans-serif" font-weight="900" font-size="32" letter-spacing="3" fill="currentColor">NOX</text>
+          </svg>
+        </a>
+
+        <!-- Red Bull -->
+        <a class="slogo slogo-redbull" href="#" title="Red Bull">
+          <svg viewBox="0 0 120 36" xmlns="http://www.w3.org/2000/svg">
+            <!-- two bulls silhouette -->
+            <path d="M14 22 Q10 18 12 14 Q15 10 18 14 Q20 10 24 12 Q28 16 25 22 Z" fill="currentColor" opacity=".9"/>
+            <path d="M20 22 Q16 18 18 14 Q21 10 24 14 Q26 10 30 12 Q34 16 31 22 Z" fill="currentColor" opacity=".6"/>
+            <text x="38" y="17" font-family="'Barlow Condensed',sans-serif" font-weight="900" font-size="13" letter-spacing="2" fill="#cc1e1e">RED</text>
+            <text x="38" y="30" font-family="'Barlow Condensed',sans-serif" font-weight="900" font-size="13" letter-spacing="2" fill="#1a3a8a">BULL</text>
+          </svg>
+        </a>
+
+        <!-- Decathlon -->
+        <a class="slogo slogo-decathlon" href="#" title="Decathlon">
+          <svg viewBox="0 0 130 36" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="4" width="28" height="28" rx="4" fill="#0066cc"/>
+            <text x="5" y="26" font-family="'Barlow Condensed',sans-serif" font-weight="900" font-size="22" fill="#fff">D</text>
+            <text x="34" y="26" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="19" letter-spacing="1" fill="currentColor">DECATHLON</text>
+          </svg>
+        </a>
+
+        <!-- Smouha Club -->
+        <a class="slogo slogo-smouha" href="#" title="Smouha Club">
+          <svg viewBox="0 0 110 36" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="4" width="26" height="28" rx="3" fill="none" stroke="#c8a045" stroke-width="1.5"/>
+            <text x="4" y="26" font-family="'Barlow Condensed',sans-serif" font-weight="900" font-size="20" fill="#c8a045">SC</text>
+            <text x="32" y="19" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="13" letter-spacing="1" fill="currentColor">SMOUHA</text>
+            <text x="32" y="31" font-family="'Barlow Condensed',sans-serif" font-weight="600" font-size="11" letter-spacing="1" fill="#8a8a8a">CLUB</text>
+          </svg>
+        </a>
+
+        <!-- Wadi Degla -->
+        <a class="slogo slogo-wadidegla" href="#" title="Wadi Degla">
+          <svg viewBox="0 0 110 36" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="4" width="26" height="28" rx="3" fill="#4aaa6f" opacity=".15"/>
+            <text x="3" y="26" font-family="'Barlow Condensed',sans-serif" font-weight="900" font-size="20" fill="#4aaa6f">WD</text>
+            <text x="32" y="19" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="13" letter-spacing="1" fill="currentColor">WADI</text>
+            <text x="32" y="31" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="11" letter-spacing="1" fill="#8a8a8a">DEGLA</text>
+          </svg>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- UPCOMING TOURNAMENTS -->
+  <section class="section" id="upcoming">
+    <div class="container">
+      <div class="section-hdr reveal">
+        <div>
+          <p class="section-label" style="margin-bottom:4px">On the Calendar</p>
+          <h2 class="section-title">Upcoming <span class="accent">Tournaments</span></h2>
+        </div>
+        <a href="tournaments.html" class="btn btn-outline btn-sm">View All</a>
+      </div>
+      <div id="upcoming-wrap"><div class="spinner"></div></div>
+    </div>
+  </section>
+
+  <!-- LATEST CHAMPIONS -->
+  <section class="section-dark section" id="champions">
+    <div class="container">
+      <div class="section-hdr reveal">
+        <div>
+          <p class="section-label" style="margin-bottom:4px">Hall of Fame</p>
+          <h2 class="section-title">Latest <span class="accent">Champions</span></h2>
+        </div>
+        <a href="results.html" class="btn btn-outline btn-sm">All Results</a>
+      </div>
+      <div id="champions-wrap"><div class="spinner"></div></div>
+    </div>
+  </section>
+
+  <!-- RANKINGS PREVIEW -->
+  <section class="section">
+    <div class="container">
+      <div class="section-hdr reveal">
+        <div>
+          <p class="section-label" style="margin-bottom:4px">Points Table</p>
+          <h2 class="section-title"><span class="accent">Top</span> Ranked Players</h2>
+        </div>
+        <a href="rankings.html" class="btn btn-outline btn-sm">Full Rankings</a>
+      </div>
+      <div class="card reveal">
+        <div style="overflow-x:auto">
+          <table class="rankings-tbl">
+            <thead>
+              <tr>
+                <th style="width:70px">Rank</th>
+                <th>Player</th>
+                <th>Points</th>
+                <th>Tournaments</th>
+                <th>Titles</th>
+              </tr>
+            </thead>
+            <tbody id="rankings-preview-body">
+              <tr><td colspan="5"><div class="spinner"></div></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="padding:14px 18px;border-top:1px solid var(--border);text-align:center">
+          <a href="rankings.html" class="btn btn-outline btn-sm">View Full Rankings</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANNOUNCEMENTS -->
+  <div id="announcements-section" class="hidden">
+    <div class="section-dark section-sm">
+      <div class="container">
+        <div class="section-hdr mb-4 reveal">
+          <h2 class="section-title">Latest <span class="accent">News</span></h2>
+          <a href="announcements.html" class="btn btn-outline btn-sm">All News</a>
+        </div>
+        <div id="announcements-wrap"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="cta-banner-inner">
+      <p class="cta-banner-label">Egypt's #1 Padel Circuit</p>
+      <h2 class="cta-banner-title">Ready to Compete?</h2>
+      <div class="cta-banner-btns">
+        <a href="register.html" class="btn-dark">Join the Circuit</a>
+        <a href="tournaments.html" class="btn-ghost-dark">View Tournaments</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">A<span>P</span>ADEL</div>
+      <nav class="footer-links">
+        <a href="tournaments.html">Tournaments</a>
+        <a href="rankings.html">Rankings</a>
+        <a href="results.html">Results</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="WhatsApp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 APadel. Egypt's Competitive Padel Ecosystem.</span>
+      <span>Powered by <a href="https://ivorystudios.io" style="color:var(--green)">Ivory Studios</a></span>
+    </div>
+  </footer>
+</div>
+
+<div id="toast-container"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script type="module" src="js/app.js"></script>
+<script type="module">
+  import { supabase } from './js/supabase.js';
+  import { animateCount, fmtDate, fmtRange, fmtMoney, avatarEl, statusBadge, tCardHTML, iconCal, iconPin, iconTeam, iconTrophy, escapeHtml } from './js/app.js';
+
+  function _homeInit() {
+    loadStats();
+    loadSpotlight();
+    loadUpcoming();
+    loadChampions();
+    loadRankingsPreview();
+    loadAnnouncements();
+  }
+  if (window._appReady) _homeInit();
+  else window.addEventListener('app:ready', _homeInit);
+
+  async function loadSpotlight() {
+    const { data } = await supabase
+      .from('tournaments')
+      .select('*')
+      .in('status', ['registration_open', 'upcoming', 'ongoing'])
+      .order('start_date')
+      .limit(1);
+    if (!data?.length) return;
+    const t = data[0];
+    if (t.image_url) document.getElementById('spotlight-bg').style.backgroundImage = `url('${escapeHtml(t.image_url)}')`;
+    const tagMap = { registration_open: 'Registration Open', upcoming: 'Coming Soon', ongoing: 'Happening Now' };
+    document.getElementById('spotlight-tag').textContent = tagMap[t.status] || 'Next Tournament';
+    document.getElementById('spotlight-title').textContent = t.name;
+    document.getElementById('spotlight-date').textContent = fmtRange(t.start_date, t.end_date);
+    document.getElementById('spotlight-loc').textContent = t.location;
+    const cta = document.getElementById('spotlight-cta');
+    cta.href = `tournament.html?id=${escapeHtml(t.id)}`;
+    cta.textContent = t.status === 'registration_open' ? 'Register Now →' : 'View Details →';
+    if (t.prize_pool) document.getElementById('sp-total').textContent = fmtMoney(t.prize_pool);
+    if (t.first_place_cash)  document.getElementById('sp-1st').textContent  = fmtMoney(t.first_place_cash);
+    if (t.second_place_cash) document.getElementById('sp-2nd').textContent = fmtMoney(t.second_place_cash);
+    if (t.third_place_cash)  document.getElementById('sp-3rd').textContent  = fmtMoney(t.third_place_cash);
+  }
+
+  async function loadStats() {
+    const [{ count: players }, { data: comp }, { data: prizes }, { count: partners }] = await Promise.all([
+      supabase.from('profiles').select('*', { count: 'exact', head: true }).eq('role', 'player'),
+      supabase.from('tournaments').select('id').eq('status', 'completed'),
+      supabase.from('tournaments').select('prize_pool').eq('status', 'completed'),
+      supabase.from('sponsors').select('*', { count: 'exact', head: true }).eq('is_active', true),
+    ]);
+    const totalPrize = prizes?.reduce((s, t) => s + (t.prize_pool || 0), 0) || 0;
+    animateCount(document.getElementById('stat-players'), players || 0);
+    animateCount(document.getElementById('stat-tournaments'), comp?.length || 0);
+    animateCount(document.getElementById('stat-partners'), partners || 0);
+    const prizeEl = document.getElementById('stat-prize');
+    if (totalPrize >= 1000) animateCount(prizeEl, Math.round(totalPrize / 1000), 'K EGP');
+    else animateCount(prizeEl, totalPrize, ' EGP');
+  }
+
+  async function loadPartners() {
+    const { data } = await supabase.from('sponsors').select('*').eq('is_active', true).order('sort_order');
+    if (!data?.length) return;
+    document.getElementById('partners-logos').innerHTML = data.map(s =>
+      s.logo_url
+        ? `<a href="${escapeHtml(s.website_url || '#')}" target="_blank" rel="noopener"><img src="${escapeHtml(s.logo_url)}" class="sponsor-logo" alt="${escapeHtml(s.name)}" loading="lazy"></a>`
+        : `<span class="partner-logo-item">${escapeHtml(s.name)}</span>`
+    ).join('');
+  }
+
+  async function loadUpcoming() {
+    const wrap = document.getElementById('upcoming-wrap');
+    const { data } = await supabase.from('tournaments').select('*').in('status', ['upcoming', 'registration_open', 'ongoing']).order('start_date').limit(3);
+    if (!data?.length) {
+      wrap.innerHTML = '<div class="empty-state"><p>No upcoming tournaments at this time. Check back soon.</p></div>';
+      return;
+    }
+    const feat = data[0];
+    const rest = data.slice(1);
+    wrap.innerHTML = `
+      <div class="grid-2" style="margin-bottom:16px">
+        <div class="t-featured">
+          <div class="t-featured-img">
+            ${feat.image_url ? `<img src="${escapeHtml(feat.image_url)}" alt="${escapeHtml(feat.name)}" loading="lazy">` : ''}
+            <div class="t-featured-img-overlay"></div>
+          </div>
+          <div class="t-featured-body">
+            <div>
+              <div class="t-featured-name">${escapeHtml(feat.name)}</div>
+              <div class="t-meta mb-4">
+                <div class="t-meta-row">${iconCal()} ${fmtRange(feat.start_date, feat.end_date)}</div>
+                <div class="t-meta-row">${iconPin()} ${escapeHtml(feat.location)}</div>
+                <div class="t-meta-row">${iconTeam()} ${feat.max_teams} Teams</div>
+                <div class="t-meta-row">${iconTrophy()} ${fmtMoney(feat.prize_pool)} Prize Pool</div>
+              </div>
+            </div>
+            <a href="tournament.html?id=${escapeHtml(feat.id)}" class="btn btn-green btn-sm">View &amp; Register</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-hdr">Prize Breakdown</div>
+          <div class="card-body">
+            <table class="rewards-tbl">
+              <tr><td class="place">1st Place</td><td class="amount">${feat.first_place_cash ? fmtMoney(feat.first_place_cash) : '—'}</td></tr>
+              <tr><td class="place">2nd Place</td><td class="amount">${feat.second_place_cash ? fmtMoney(feat.second_place_cash) : '—'}</td></tr>
+              <tr><td class="place">3rd Place</td><td class="amount">${feat.third_place_cash ? fmtMoney(feat.third_place_cash) : '—'}</td></tr>
+              <tr><td class="place">4th Place</td><td class="amount">${feat.fourth_place_cash ? fmtMoney(feat.fourth_place_cash) : '—'}</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      ${rest.length ? `<div class="grid-2" style="margin-top:0">${rest.map(t => tCardHTML(t)).join('')}</div>` : ''}`;
+  }
+
+  const CHAMP_FALLBACKS = [
+    'https://images.pexels.com/photos/35248470/pexels-photo-35248470.jpeg?auto=compress&cs=tinysrgb&w=800',
+    'https://images.pexels.com/photos/35248254/pexels-photo-35248254.jpeg?auto=compress&cs=tinysrgb&w=800',
+    'https://images.pexels.com/photos/34079998/pexels-photo-34079998.jpeg?auto=compress&cs=tinysrgb&w=800',
+  ];
+
+  async function loadChampions() {
+    const wrap = document.getElementById('champions-wrap');
+    const { data } = await supabase.from('tournament_champions')
+      .select('*, tournaments(name)')
+      .order('created_at', { ascending: false })
+      .limit(3);
+    if (!data?.length) {
+      wrap.innerHTML = '<div class="empty-state"><p>Champions will appear once tournaments are completed.</p></div>';
+      return;
+    }
+    const posLabel = { 1: 'Champion', 2: 'Runner-Up', 3: '3rd Place', 4: '4th Place' };
+    wrap.innerHTML = `<div class="champions-grid">${data.map((c, i) => {
+      const imgSrc = c.image_url || CHAMP_FALLBACKS[i % CHAMP_FALLBACKS.length];
+      return `
+      <div class="champion-card">
+        <img src="${escapeHtml(imgSrc)}" alt="${escapeHtml(c.player1_name)}" loading="lazy">
+        <div class="champion-label-badge">${escapeHtml(posLabel[c.position] || String(c.position))}</div>
+        <div class="champion-card-overlay">
+          <div class="champion-name">${escapeHtml(c.player1_name)}${c.player2_name ? ' / ' + escapeHtml(c.player2_name) : ''}</div>
+          <div class="champion-tournament">${escapeHtml(c.tournaments?.name || '')}</div>
+        </div>
+      </div>`;
+    }).join('')}</div>`;
+  }
+
+  async function loadRankingsPreview() {
+    const tbody = document.getElementById('rankings-preview-body');
+    const { data } = await supabase.from('player_stats')
+      .select('*, profiles(id, full_name, avatar_url, origin)')
+      .order('total_points', { ascending: false })
+      .limit(8);
+    if (!data?.length) {
+      tbody.innerHTML = '<tr><td colspan="5" class="empty-cell">No rankings yet.</td></tr>';
+      return;
+    }
+    tbody.innerHTML = data.map((r, i) => `
+      <tr onclick="window.location.href='player.html?id=${escapeHtml(r.profiles?.id || '')}'" style="cursor:pointer">
+        <td><div class="rank-cell"><span class="rank-num ${i === 0 ? 'gold' : i === 1 ? 'silver' : i === 2 ? 'bronze' : ''}">${i + 1}</span></div></td>
+        <td><div class="player-cell">${avatarEl(r.profiles, 36)}<div><div class="p-name">${escapeHtml(r.profiles?.full_name || '—')}</div><div class="p-origin">${escapeHtml(r.profiles?.origin || '')}</div></div></div></td>
+        <td><span class="pts-cell">${r.total_points}</span></td>
+        <td>${r.tournaments_played}</td>
+        <td><strong>${r.titles}</strong></td>
+      </tr>`).join('');
+  }
+
+  async function loadAnnouncements() {
+    const { data } = await supabase.from('announcements')
+      .select('*')
+      .eq('is_published', true)
+      .order('created_at', { ascending: false })
+      .limit(3);
+    if (!data?.length) return;
+    document.getElementById('announcements-section').classList.remove('hidden');
+    document.getElementById('announcements-wrap').innerHTML = data.map(a => `
+      <div class="card mb-4">
+        <div class="card-hdr">
+          <span class="card-hdr-title">${escapeHtml(a.title)}</span>
+          <span class="text-muted" style="font-size:12px">${fmtDate(a.created_at)}</span>
+        </div>
+        <div class="card-body"><p style="font-size:14px;color:var(--text-muted)">${escapeHtml(a.body)}</p></div>
+      </div>`).join('');
+  }
+</script>
+</body>
+</html>

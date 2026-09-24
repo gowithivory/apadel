@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tournament — APadel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav" id="main-nav">
+  <a href="index.html" class="nav-logo"><span class="accent">A</span>PADEL</a>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">Home</a>
+    <a href="tournaments.html" class="active">Tournaments</a>
+    <a href="rankings.html">Rankings</a>
+    <a href="results.html">Results</a>
+    <a href="announcements.html">News</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <div id="nav-dynamic" style="display:contents"></div>
+  </div>
+  <div class="nav-right" id="nav-right"></div>
+  <button class="nav-hamburger" id="nav-ham" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="page-wrap">
+  <div id="t-wrap"><div class="spinner" style="margin-top:80px"></div></div>
+</div>
+
+<div id="toast-container"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script type="module" src="js/app.js"></script>
+<script type="module" src="js/tournament.js"></script>
+</body>
+</html>

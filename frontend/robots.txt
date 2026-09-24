@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /organiser.html
+Disallow: /edit-profile.html
+Disallow: /reset-password.html
+
+Sitemap: https://apadel.com/sitemap.xml

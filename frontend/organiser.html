@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Organiser Panel — APadel</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav" id="main-nav">
+  <a href="index.html" class="nav-logo"><span class="accent">A</span>PADEL</a>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">Home</a>
+    <a href="tournaments.html">Tournaments</a>
+    <a href="rankings.html">Rankings</a>
+    <a href="organiser.html" class="active">Organiser</a>
+    <div id="nav-dynamic" style="display:contents"></div>
+  </div>
+  <div class="nav-right" id="nav-right"></div>
+  <button class="nav-hamburger" id="nav-ham" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-hero">
+    <div class="container">
+      <h1 class="page-hero-title"><span class="accent">Organiser</span> Panel</h1>
+      <p class="page-hero-sub">Manage tournaments, registrations, match results, and announcements.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Tabs -->
+      <div class="org-tabs admin-tabs">
+        <button class="org-tab admin-tab active" data-panel="panel-tournaments">Tournaments</button>
+        <button class="org-tab admin-tab" data-panel="panel-registrations">Registrations</button>
+        <button class="org-tab admin-tab" data-panel="panel-matches">Matches</button>
+        <button class="org-tab admin-tab" data-panel="panel-players">Players</button>
+        <button class="org-tab admin-tab l2-only" data-panel="panel-announcements">Announcements</button>
+        <button class="org-tab admin-tab l2-only" data-panel="panel-rules">Rule Templates</button>
+        <button class="org-tab admin-tab l2-only" data-panel="panel-create">Create Tournament</button>
+      </div>
+
+      <!-- TOURNAMENTS -->
+      <div class="org-panel admin-panel active" id="panel-tournaments">
+        <h2 class="section-title" style="font-size:22px;margin-bottom:20px">All Tournaments</h2>
+        <div id="org-tournaments"><div class="spinner"></div></div>
+      </div>
+
+      <!-- REGISTRATIONS -->
+      <div class="org-panel admin-panel" id="panel-registrations">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:12px">
+          <h2 class="section-title" style="font-size:22px">Registrations</h2>
+          <select id="reg-t-filter" class="input" style="max-width:240px">
+            <option value="">All Tournaments</option>
+          </select>
+        </div>
+        <div class="card" style="overflow-x:auto">
+          <table class="org-table">
+            <thead><tr><th>Team</th><th>Tournament</th><th>Phone</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody id="regs-tbody"><tr><td colspan="5"><div class="spinner"></div></td></tr></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- MATCHES -->
+      <div class="org-panel admin-panel" id="panel-matches">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:12px">
+          <h2 class="section-title" style="font-size:22px">Match Results</h2>
+          <select id="match-t-filter" class="input" style="max-width:240px">
+            <option value="">Select tournament…</option>
+          </select>
+        </div>
+        <div id="matches-wrap"><p class="text-muted">Select a tournament above to manage matches.</p></div>
+      </div>
+
+      <!-- PLAYERS -->
+      <div class="org-panel admin-panel" id="panel-players">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:12px">
+          <h2 class="section-title" style="font-size:22px">Players</h2>
+          <input type="text" id="player-search" class="input" placeholder="Search players…" style="max-width:240px">
+        </div>
+        <div class="card" style="overflow-x:auto">
+          <table class="org-table">
+            <thead><tr><th>Player</th><th>Origin</th><th>Gender</th><th>Status &amp; Actions</th></tr></thead>
+            <tbody id="players-tbody"><tr><td colspan="4"><div class="spinner"></div></td></tr></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ANNOUNCEMENTS (L2 only) -->
+      <div class="org-panel admin-panel l2-only" id="panel-announcements">
+        <h2 class="section-title" style="font-size:22px;margin-bottom:20px">Announcements</h2>
+        <div class="card mb-4">
+          <div class="card-hdr">New Announcement</div>
+          <div class="card-body">
+            <form id="add-announce-form">
+              <div class="form-group"><label>Title</label><input type="text" name="title" class="input" required></div>
+              <div class="form-group"><label>Body</label><textarea name="body" class="input" rows="4" required></textarea></div>
+              <div class="form-group" style="display:flex;align-items:center;gap:10px">
+                <input type="checkbox" name="is_published" id="chk-pub" checked>
+                <label for="chk-pub" style="text-transform:none;font-size:14px;margin-bottom:0">Publish immediately</label>
+              </div>
+              <button type="submit" class="btn btn-green">Publish</button>
+            </form>
+          </div>
+        </div>
+        <div id="announcements-list"><div class="spinner"></div></div>
+      </div>
+
+      <!-- RULE TEMPLATES (L2 only) -->
+      <div class="org-panel admin-panel l2-only" id="panel-rules">
+        <h2 class="section-title" style="font-size:22px;margin-bottom:20px">Rule Templates</h2>
+        <div class="card mb-4">
+          <div class="card-hdr">Add Template</div>
+          <div class="card-body">
+            <form id="add-template-form">
+              <div class="form-group"><label>Title</label><input type="text" name="title_field" class="input" required placeholder="e.g. Standard Match Rules"></div>
+              <div class="form-group"><label>Rule Text</label><textarea name="rule_text" class="input" rows="3" required placeholder="Describe the rule…"></textarea></div>
+              <button type="submit" class="btn btn-green">Add Template</button>
+            </form>
+          </div>
+        </div>
+        <div id="rule-templates-list"><div class="spinner"></div></div>
+      </div>
+
+      <!-- CREATE TOURNAMENT (L2 only) -->
+      <div class="org-panel admin-panel l2-only" id="panel-create">
+        <h2 class="section-title" style="font-size:22px;margin-bottom:20px">Create Tournament</h2>
+        <div class="card" style="max-width:700px">
+          <div class="card-hdr">Tournament Details</div>
+          <div class="card-body">
+            <form id="create-t-form">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+                <div class="form-group" style="grid-column:1/-1">
+                  <label>Tournament Name</label>
+                  <input type="text" name="name" class="input" required placeholder="APadel Open 2026">
+                </div>
+                <div class="form-group">
+                  <label>Location</label>
+                  <input type="text" name="location" class="input" required placeholder="Cairo">
+                </div>
+                <div class="form-group">
+                  <label>Surface</label>
+                  <input type="text" name="surface" class="input" placeholder="Artificial Grass">
+                </div>
+                <div class="form-group">
+                  <label>Start Date</label>
+                  <input type="date" name="start_date" class="input" required>
+                </div>
+                <div class="form-group">
+                  <label>End Date</label>
+                  <input type="date" name="end_date" class="input" required>
+                </div>
+                <div class="form-group">
+                  <label>Registration Deadline</label>
+                  <input type="date" name="registration_deadline" class="input">
+                </div>
+                <div class="form-group">
+                  <label>Max Teams</label>
+                  <input type="number" name="max_teams" class="input" value="16" min="2" required>
+                </div>
+                <div class="form-group">
+                  <label>Number of Courts</label>
+                  <input type="number" name="num_courts" class="input" value="4" min="1">
+                </div>
+                <div class="form-group">
+                  <label>Entry Fee (EGP)</label>
+                  <input type="number" name="entry_fee" class="input" value="0" min="0">
+                </div>
+                <div class="form-group">
+                  <label>Prize Pool (EGP)</label>
+                  <input type="number" name="prize_pool" class="input" value="0" min="0">
+                </div>
+                <div class="form-group">
+                  <label>1st Place Prize (EGP)</label>
+                  <input type="number" name="first_place_cash" class="input" min="0">
+                </div>
+                <div class="form-group">
+                  <label>2nd Place Prize (EGP)</label>
+                  <input type="number" name="second_place_cash" class="input" min="0">
+                </div>
+                <div class="form-group">
+                  <label>3rd Place Prize (EGP)</label>
+                  <input type="number" name="third_place_cash" class="input" min="0">
+                </div>
+                <div class="form-group">
+                  <label>Status</label>
+                  <select name="status" class="input">
+                    <option value="upcoming">Upcoming</option>
+                    <option value="registration_open">Registration Open</option>
+                  </select>
+                </div>
+                <div class="form-group" style="grid-column:1/-1">
+                  <label>Tournament Image URL</label>
+                  <input type="url" name="image_url" class="input" placeholder="https://images.pexels.com/…">
+                </div>
+                <div class="form-group" style="grid-column:1/-1">
+                  <label>Description</label>
+                  <textarea name="description" class="input" rows="3" placeholder="Optional tournament description…"></textarea>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-green">Create Tournament</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">A<span>P</span>ADEL</div>
+      <nav class="footer-links">
+        <a href="tournaments.html">Tournaments</a>
+        <a href="rankings.html">Rankings</a>
+        <a href="results.html">Results</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 APadel. Egypt's Competitive Padel Ecosystem.</span>
+      <span>Powered by <a href="https://ivorystudios.io" style="color:var(--green)">Ivory Studios</a></span>
+    </div>
+  </footer>
+</div>
+
+<div id="toast-container"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script type="module" src="js/app.js"></script>
+<script type="module" src="js/organiser.js"></script>
+</body>
+</html>
